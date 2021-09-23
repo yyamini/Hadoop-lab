@@ -1,0 +1,28 @@
+public class matrix multiply {
+public static void main(String [] args) throws exception {
+if (args.length!=2) {
+System.err.println("Uasge: MatrixMultiply<in_dir><out_dir>");
+System.exit(2);
+}
+Configuration conf = new Configuration();
+conf.set("m","1000");
+conf.set("n","100");
+conf.set("p","1000);
+@SuppressWarnings("deprecation")
+job job = new job(conf,"MatrixMultiply");
+job.setjarByClass(MatrixMultiply.class);
+job.setOutputkeyClass(Text.class);
+job.setOutputValueClass(Text.class);
+
+job.setMapperClass(Map.class);
+job.setReducerClass(Text.Class);
+
+job.setInputFomatClass(TextInputFormat.class);
+job.setOutputFomatClass(TextOutputFomat.class);
+
+FileInputFomat.addInputPath(job,new Path(arng[0]));
+FileInputFomat.setOutputpath(job,new path(arngs[1]));
+
+job.watiForcompletion(true);
+}
+}
